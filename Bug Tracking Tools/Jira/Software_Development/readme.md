@@ -1,10 +1,10 @@
 # Project: Software Development
 
 **PROJECT FEATURES:**  
-<img width="500" height="200" alt="image" src="https://github.com/user-attachments/assets/e7a8a09b-3a81-4c5b-8713-ff45d9062379" />  
+<img width="745" height="301" alt="image" src="https://github.com/user-attachments/assets/975d869b-0afc-44cb-8fe7-e0eeddbffe7c" />
 
-**SCREENSHOTS:**  
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8e913208-6dd9-492c-b515-d1a6bb1ded7a" />  
+**SCREENSHOTS:**
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/99eb208c-2c2a-4d6b-82ce-19a505b996af" />
 
 **NOTES:**  
 ```
