@@ -5,6 +5,7 @@ test cases
 
 
 bug report
+```
 Bug ID:
 Title:
 
@@ -58,3 +59,4 @@ Attachments:
 
 Additional Notes:
 [Any extra information]
+```
