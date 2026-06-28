@@ -1,0 +1,66 @@
+Test Case ID	Test Case Title	Pre-condition	Steps to Execute	Expected Result	Actual Result	Status	Executed QA Name
+TC001	Verify that login should work with valid email and password	User has valid credentials	"1. Navigate to login page
+2. Enter valid email
+3. Enter valid password
+4. Click Sign in"	User should be logged in successfully and redirected to dashboard	As expected	Pass	QA Name
+TC002	Verify that login should fail with invalid email format	None	"1. Navigate to login page
+2. Enter invalid email format (abc@, abc.com)
+3. Enter valid password
+4. Click Sign in"	"System should show ""Invalid email"" error"	As expected	Pass	QA Name
+TC003	Verify that login should fail with incorrect password	User has valid email	"1. Navigate to login page
+2. Enter valid email
+3. Enter incorrect password
+4. Click Sign in"	"System should show ""Invalid credentials"" error"	As expected	Pass	QA Name
+TC004	Verify that login should fail with unregistered email	None	"1. Navigate to login page
+2. Enter unregistered email
+3. Enter any password
+4. Click Sign in"	"System should show ""User not found"" error"	As expected	Pass	QA Name
+TC005	Verify that email and password fields should not accept blank values	None	"1. Navigate to login page
+2. Leave email & password blank
+3. Click Sign in"	"System should show ""Email required"" and ""Password required"" messages"	As expected	Pass	QA Name
+TC006	Verify that password field should mask the entered characters	None	"1. Navigate to login page
+2. Type password in password field"	Password characters should be masked with dots or asterisks	As expected	Pass	QA Name
+TC007	"Verify that clicking ""Forgot Password?"" should redirect to reset password screen"	None	"1. Navigate to login page
+2. Click ""Forgot Password?"""	User should be redirected to reset password page	As expected	Pass	QA Name
+TC008	"Verify that ""Remember Me"" should keep user logged in after browser restart"	User has valid credentials	"1. Navigate to login page
+2. Enter valid credentials
+3. Select ""Remember Me"" checkbox
+4. Click Sign in
+5. Close and reopen browser
+6. Navigate back to site"	User should remain logged in	As expected	Pass	QA Name
+TC009	"Verify that ""Remember Me"" unchecked should not keep user logged in"	User has valid credentials	"1. Navigate to login page
+2. Enter valid credentials
+3. Do not select ""Remember Me""
+4. Sign in
+5. Close and reopen browser"	User should be logged out	As expected	Pass	QA Name
+TC010	Verify that user should not log in with empty email and filled password	None	"1. Leave email blank
+2. Enter valid password
+3. Click Sign in"	"Error ""Email required"" should be shown"	As expected	Pass	QA Name
+TC011	Verify that user should not log in with filled email and empty password	None	"1. Enter valid email
+2. Leave password blank
+3. Click Sign in"	"Error ""Password required"" should be shown"	As expected	Pass	QA Name
+TC012	"Verify that login page should allow pressing ""Enter"" key to submit"	None	"1. Enter valid credentials
+2. Press Enter"	Login should be successful	As expected	Pass	QA Name
+TC013	Verify that session should expire after logout	User logged in	"1. Log in with valid credentials
+2. Click Logout
+3. Click back button in browser"	User should not return to dashboard, should redirect to login page	As expected	Pass	QA Name
+TC014	Verify that system should lock account after multiple failed attempts	User exists	1. Enter valid email with wrong password 5 times	Account should be locked with security message	As expected	Pass	QA Name
+TC015	"Verify that ""Sign in using SSO"" should redirect to SSO login"	SSO enabled	"1. Navigate to login page
+2. Click ""Sign in using SSO"""	User should be redirected to SSO authentication page	As expected	Pass	QA Name
+TC016	Verify that login should not allow script injection in email field	None	"1. Enter <script>alert(1)</script> in email field
+2. Enter valid password
+3. Click Sign in"	System should escape script and show error	As expected	Pass	QA Name
+TC017	Verify that login should not allow SQL injection in email field	None	"1. Enter ' OR '1'='1 in email
+2. Any password
+3. Click Sign in"	System should block SQL injection attempt	As expected	Pass	QA Name
+TC018	Verify that login page should display proper placeholders in fields	None	1. Navigate to login page	"Email field should show ""Email address"", password field ""Password"""	As expected	Pass	QA Name
+TC019	Verify that login page should be accessible via secure HTTPS	None	1. Check browser address bar	Page should load with HTTPS and valid SSL certificate	As expected	Pass	QA Name
+TC020	Verify that password field should support copy-paste restriction (if implemented)	None	1. Try to copy-paste password in/out	System should allow/deny based on design	As expected	Pass	QA Name
+TC021	"Verify that ""Start a free trial"" link should redirect to registration page"	None	"1. Click ""Start a free trial"""	User should be redirected to sign-up page	As expected	Pass	QA Name
+TC022	Verify that login should log timestamp and IP for auditing	User logs in	1. Log in with valid credentials	System should log timestamp & IP in backend	As expected	Pass	QA Name
+TC023	Verify that login should maintain session timeout after inactivity	User logged in	"1. Log in
+2. Stay idle for set time (e.g., 15 min)
+3. Try using app"	System should log out after inactivity timeout	As expected	Pass	QA Name
+TC024	Verify that multiple users should be able to log in on different browsers	None	"1. Log in with same credentials on Chrome
+2. Log in with same credentials on Firefox"	Both sessions should be allowed (or restricted per policy)	As expected	Pass	QA Name
+TC025	Verify that login page UI elements should be aligned properly	None	1. Navigate to login page	All fields, buttons, and links should be aligned and visible properly	As expected	Pass	QA Name
