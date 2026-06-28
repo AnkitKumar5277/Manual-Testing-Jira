@@ -1,0 +1,21 @@
+Metric	Value
+No. of Requirements	10
+Avg. No. of Test Cases/Requirement	2
+Total No. of Test Cases	20
+Test Cases Executed	18
+Test Cases Passed	16
+Test Cases Failed	2
+Test Cases Blocked	0
+Test Cases Unexecuted	2
+Total Defects Identified	10
+Critical Defects	2
+High Defects	4
+Medium Defects	2
+Low Defects	2
+Customer Defects	0
+Defects in UAT	0
+% Test Cases Executed	0
+% Test Cases Not Executed	0
+% Test Cases Passed	0
+% Test Cases Failed	0
+% Test Cases Blocked	0
