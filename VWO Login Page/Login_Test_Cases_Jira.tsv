@@ -1,0 +1,54 @@
+Test Case ID	Test Case Title	Pre-condition	Steps to Execute	Expected Result	Priority	Type
+TC001	Verify login with valid email and valid password should work	User has valid credentials	"1. Navigate to login page
+2. Enter valid email & password
+3. Click Sign in"	User should be redirected to dashboard	High	Positive
+TC002	Verify login with valid email and invalid password should fail	User exists	"1. Enter valid email
+2. Enter invalid password
+3. Click Sign in"	Error message: Invalid credentials	High	Negative
+TC003	Verify login with invalid email format should fail	None	"1. Enter invalid email (abc@, test.com)
+2. Enter any password
+3. Click Sign in"	Error: Invalid email format	Medium	Negative
+TC004	Verify login with unregistered email should fail	None	"1. Enter unregistered email
+2. Enter password
+3. Click Sign in"	Error: User not found	High	Negative
+TC005	Verify login with blank email and blank password should fail	None	"1. Keep email and password empty
+2. Click Sign in"	Error: Email and password required	High	Negative
+TC006	Verify login with blank email and valid password should fail	None	"1. Enter password only
+2. Click Sign in"	Error: Email required	Medium	Negative
+TC007	Verify login with valid email and blank password should fail	None	"1. Enter email only
+2. Click Sign in"	Error: Password required	Medium	Negative
+TC008	Verify that password input should be masked	None	1. Type password in password field	Input should appear as dots/asterisks	Medium	UI
+TC009	Verify pressing Enter key should trigger login	None	"1. Enter valid credentials
+2. Press Enter"	Login should happen	Low	Usability
+TC010	Verify login should lock account after multiple failed attempts	User exists	"1. Enter wrong password 5 times
+2. Try again"	Account should be locked	High	Security
+TC011	Verify login session should expire after inactivity	User logged in	"1. Stay idle for 15 mins
+2. Try performing action"	System should log out	Medium	Security
+TC012	Verify logout should terminate session	User logged in	"1. Log in
+2. Click Logout
+3. Use browser back button"	User should not return to dashboard	Medium	Security
+TC013	Verify login with XSS script in email field should be blocked	None	"1. Enter <script>alert(1)</script> in email
+2. Enter password
+3. Click Sign in"	System should reject input	High	Security
+TC014	Verify login with SQL injection attempt should be blocked	None	"1. Enter ' OR '1'='1 in email
+2. Enter any password
+3. Click Sign in"	System should reject input	High	Security
+TC015	Verify “Forgot Password” link should navigate to reset page	None	1. Click “Forgot Password?”	Reset password page should open	Medium	Positive
+TC016	Verify “Remember Me” should persist login after browser restart	User exists	"1. Check “Remember Me”
+2. Login
+3. Restart browser"	User should stay logged in	Medium	Positive
+TC017	Verify login without “Remember Me” should not persist session	User exists	"1. Login without selecting “Remember Me”
+2. Restart browser"	User should be logged out	Medium	Negative
+TC018	Verify “Sign in using SSO” should redirect to SSO flow	SSO enabled	1. Click “Sign in using SSO”	Redirect to SSO provider	High	Positive
+TC019	Verify multiple users can log in simultaneously in different browsers	None	"1. Login in Chrome
+2. Login in Firefox with same credentials"	Both should work (or be restricted if policy enforced)	Low	Combination
+TC020	Verify login page should load with HTTPS	None	1. Open login page	URL should show HTTPS with valid SSL	High	Security
+TC021	Verify login page UI elements should be properly aligned	None	1. Navigate to login page	Fields, buttons, links should align properly	Low	UI
+TC022	Verify login with case-sensitive email should behave correctly	User exists	"1. Enter email with different case (e.g., TEST@abc.com)
+2. Enter valid password"	Login should work or fail based on case policy	Medium	Combination
+TC023	Verify login with leading/trailing spaces in email should trim input	None	"1. Enter “ test@abc.com ”
+2. Enter valid password"	Login should succeed after trimming spaces	Medium	Combination
+TC024	Verify login when database is down should show proper error	Simulate DB down	"1. Enter credentials
+2. Click Sign in"	System should show “Service unavailable”	High	Negative
+TC025	Verify login attempt with expired account should fail	Account expired	"1. Enter expired account credentials
+2. Click Sign in"	Error: Account expired	High	Negative
